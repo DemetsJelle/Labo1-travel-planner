@@ -1,0 +1,34 @@
+:root{
+    --font-stack-headers:'Sarabun',-apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-stack-body: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+    --theme-color-xxxxx-light: #f2ffff;
+    --theme-color-xxxx-light: #ebfaff;
+    --theme-color-xxx-light: #e3eeff;
+    --theme-color-xx-light: #c4c0ff;
+    --theme-color-x-light: #d0a1ff;
+    --theme-color-light: #f889ff;
+    --theme-color-base: #ff78cb; /*Hotpink*/
+    --theme-color-dark: #ed49c8;
+    --theme-color-x-dark: #d732c4;
+    --theme-color-xx-dark: #be1db7;
+    --theme-color-xxx-dark: #9f0da3;
+    --theme-color-xxxx-dark: #770087;
+    --theme-color-xxxxx-dark:#3a0141;
+}
+
+html{
+    background: var(--theme-color-xxxx-light);
+}
+
+body{
+    font: 16px/1.5 var(--font-stack-headers); /*1rem == 16px*/
+    color: var(--theme-color-xxxxx-dark);
+}
+
+.c-app{
+    display: grid;
+    /*grid-template-columns: 5rem 1fr;*/
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}

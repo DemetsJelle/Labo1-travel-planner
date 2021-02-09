@@ -7,12 +7,48 @@
 
     <!-- TODO: Favicon-->
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/screen.css">
 
     <link defer rel="stylesheet" href="./script/app.js">
-</head>
+</head>()
 <body>
-    <h1>Welcome to the country planner</h1>
+    <main>
+        <header class="c-header">
+            <a class="c-logo" href="#"><h1 class="c-logo__text">Travel planner</h1></a>
+
+            <nav class="c-nav">
+                <ul class="c-nav-list">
+                    <li class="c-nav-list__item">Africa</li>
+                    <li class="c-nav-list__item">Americas</li>
+                    <li class="c-nav-list__item">Asia</li>
+                    <li class="c-nav-list__item">Europe</li>
+                    <li class="c-nav-list__item">Oceania</li>
+                </ul>
+            </nav>
+
+            <div class="c-counter">
+                <span class="c-couter__current js-countries-visited">49</span>/250
+            </div>
+        </header>
+
+        <article class="c-countries js-countries">
+            <section class="c-country">
+                <input class="c-country__input o-hide-accessible" type="checkbox" name="coutry" id="belgium">
+                <label class="c-country__label" for="belgium">
+                    <img class="c-country-flag" src="" alt="The flag of Belgium.">
+                    <div class="c-country__details"> 
+                        <h2 class="c-country__name">Belgium</h2>
+                        <span class="c-country__native-name">België</span>
+                    </div>
+                </label>
+            </section>
+        </article>
+        
+    </main>
+
 </body>
 </html>
