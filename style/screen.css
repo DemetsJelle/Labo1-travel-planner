@@ -1,0 +1,167 @@
+:root{
+    --font-stack-headers:'Sarabun',-apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-stack-body: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+    --theme-color-xxxxx-light: #f2ffff;
+    --theme-color-xxxx-light: #ebfaff;
+    --theme-color-xxx-light: #e3eeff;
+    --theme-color-xx-light: #c4c0ff;
+    --theme-color-x-light: #d0a1ff;
+    --theme-color-light: #f889ff;
+    --theme-color-base: #ff78cb; /*Hotpink*/
+    --theme-color-dark: #ed49c8;
+    --theme-color-x-dark: #d732c4;
+    --theme-color-xx-dark: #be1db7;
+    --theme-color-xxx-dark: #9f0da3;
+    --theme-color-xxxx-dark: #770087;
+    --theme-color-xxxxx-dark:#3a0141;
+}
+
+html{
+    background: var(--theme-color-xxxx-light);
+}
+
+body{
+    font: 16px/1.5 var(--font-stack-headers); /*1rem == 16px*/
+    color: var(--theme-color-xxxxx-dark);
+}
+
+.o-hide-accessible{
+    position:absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    white-space: nowrap; /* added line */
+}
+
+.c-app{
+    --local-border-bottom-size: .5rem;
+    display: grid;
+    /*grid-template-columns: 5rem 1fr;*/
+    grid-template-rows: auto 1fr;
+    height: calc(100vh - var(--local-border-bottom-size));
+    border-bottom: var(--local-border-bottom-size) solid var(--theme-color-base);
+}
+.c-header{
+    color:var(--theme-color-xxxx-light);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--theme-color-xxxxx-dark);
+}
+
+.c-logo__text{
+    font-size: 1.8rem;
+    color: var(--theme-color-xxxx-light);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.c-logo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: -1rem 0;
+    background: var(--theme-color-base);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    opacity: 1;
+    will-change: opacity;
+    transition: opacity 300ms ease-out;
+    text-decoration: none;
+}
+
+.c-logo:hover{
+    opacity: 0.5;
+}
+
+.c-nav{
+
+}
+
+.c-nav-list{
+    display: flex;
+}
+
+.c-nav-list__item{
+    display: inline-block;
+    font-size: 1.2rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.c-nav-list__item:hover{
+    border-color: var(--theme-color-base);
+}
+
+.c-nav-list__item + .c-nav-list__item{
+    margin-left: 1.5rem;
+}
+
+.c-counter{
+
+}
+
+.c-counter__current{
+
+}
+
+.c-countries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax( 24rem ,1fr));
+    gap: 2rem;
+
+    padding: 2rem;
+}
+
+.c-country{
+
+}
+
+.c-country__input:checked + .c-country__label{
+    opacity: 0.3;
+}
+
+.c-country__label{
+    display: flex;
+    align-items: center;
+}
+
+.c-country__flag-holder{
+    --local-flag-dimension: 5rem;
+
+    display:flex;
+    align-items: center;
+    justify-items: center;
+
+    width: var(--local-flag-dimension);
+    height: var(--local-flag-dimension);
+    overflow: hidden;
+
+    border-radius: 50%;
+}
+
+.c-country-flag{
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.c-country__details{
+
+}
+
+.c-country__name{
+    font-size: 1.6rem;
+    color: (var(--theme-color-xxxxx-dark));
+}
+
+.c-country__native-name{
+    font-size: 1.1rem;
+    opacity: 0.5;
+}
+
