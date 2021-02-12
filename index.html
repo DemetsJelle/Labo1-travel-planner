@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/screen.css">
 
-    <link defer rel="stylesheet" href="./script/app.js">
-</head>()
+    <script defer src="./script/api.js"></script>
+    <script defer src="./script/app.js"></script>
+</head>
 <body>
     <main>
         <header class="c-header">
@@ -39,7 +40,9 @@
             <section class="c-country">
                 <input class="c-country__input o-hide-accessible" type="checkbox" name="coutry" id="belgium">
                 <label class="c-country__label" for="belgium">
-                    <img class="c-country-flag" src="" alt="The flag of Belgium.">
+                    <div class="c-country__flag-holder">
+                        <img class="c-country-flag" src="https://restcountries.eu/data/bel.svg" alt="The flag of Belgium.">
+                    </div>
                     <div class="c-country__details"> 
                         <h2 class="c-country__name">Belgium</h2>
                         <span class="c-country__native-name">België</span>
