@@ -9,8 +9,9 @@ endpoint = "https://restcountries.eu/rest/v2";
 LOCAL_STORAGE_KEY = 'countries';
 
 let countryHolder;
+let selectedContinent;
 
-const setCountriesCounter(countries) =>{
+const setCountriesCounter = (countries) =>{
     let amount = 0;
     if(countries){
         for(const region in countries){
@@ -83,10 +84,10 @@ const renderCountries = (countries) => {
     for(const {name, alpha2Code, nativeName, flag} of countries) {
         countriesHTML += `
         <section class="c-country">
-                <input class="c-country__input o-hide-accessible js-country-input" type="checkbox" name="country" id="${alpha2Code}" checked="${searchLocalStorageFor(alpha2Code)}">
+                <input class="c-country__input o-hide-accessible" type="checkbox" name="country" id="${alpha2Code}">
                 <label class="c-country__label" for="${alpha2Code}">
                     <div class="c-country__flag-holder">
-                        <img class="c-country-flag" src="${flag}" alt="The flag of ${name}.">
+                        <img class="c-country__flag" src="${flag}" alt="The flag of ${name}.">
                     </div>
                     <div class="c-country__details">   
                         <h2 class="c-country__name">${name}</h2>
@@ -103,16 +104,25 @@ const renderCountries = (countries) => {
     //console.log({countries});
 }
 
+const enableNavigation = () => {
+    for (const radio of regionRadioButtons){
+        radio.addEventListener('change', function(){
+            getCountries(continents[this.value]);
+        });
+    }
+}
+
 const getCountries = async (continent) => {
     const data = await get(`${endpoint}/region/${continent}`);
     console.log({data});
-
     renderCountries(data);
 }
 
 const getDomElement = () => {
     countryHolder = document.querySelector('.js-countries');
+    regionRadioButtons = document.querySelectorAll('.js-region-radio');
     getCountries(continents.europe);
+    enableNavigation();
 }
 
 document.addEventListener('DOMContentLoaded', () =>{

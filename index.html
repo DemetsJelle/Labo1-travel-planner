@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries planner</title>
 
-    <!-- TODO: Favicon-->
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/screen.css">
@@ -17,41 +16,63 @@
     <script defer src="./script/app.js"></script>
 </head>
 <body>
-    <main>
+    <main class="c-app">
         <header class="c-header">
-            <a class="c-logo" href="#"><h1 class="c-logo__text">Travel planner</h1></a>
+            <a href="/" class="c-logo">
+                <h1 class="c-logo__text">Travel Planner</h1>
+            </a>
 
-            <nav class="c-nav">
-                <ul class="c-nav-list">
-                    <li class="c-nav-list__item">Africa</li>
-                    <li class="c-nav-list__item">Americas</li>
-                    <li class="c-nav-list__item">Asia</li>
-                    <li class="c-nav-list__item">Europe</li>
-                    <li class="c-nav-list__item">Oceania</li>
-                </ul>
+            <nav class="c-nav c-nav-list">
+                <label class="c-nav-list__item">
+                    Africa
+                    <input checkd type="radio" class="c-nav-list__input o-hide-accessible js-region-radio" value="africa" name="region">
+                </label>
+                <label class="c-nav-list__item">
+                    Americas
+                    <input checkd type="radio" class="c-nav-list__input o-hide-accessible js-region-radio" value="americas" name="region">
+                </label>
+                <label class="c-nav-list__item">
+                    Asia
+                    <input checkd type="radio" class="c-nav-list__input o-hide-accessible js-region-radio" value="asia" name="region">
+                </label>
+                <label class="c-nav-list__item">
+                    Europe
+                    <input checkd type="radio" class="c-nav-list__input o-hide-accessible js-region-radio" value="europe" name="region">
+                </label>
+                <label class="c-nav-list__item">
+                    Oceania
+                    <input checkd type="radio" class="c-nav-list__input o-hide-accessible js-region-radio" value="oceania" name="region">
+                </label>
             </nav>
-
             <div class="c-counter">
-                <span class="c-couter__current js-countries-visited">49</span>/250
+                <p class="c-counter__description">Countries visited</p>
+                <p class="c-counter__count">
+                    <span class="c-counter__current js-countries-visited">49</span>/250
+                </p>
             </div>
         </header>
 
         <article class="c-countries js-countries">
             <section class="c-country">
-                <input class="c-country__input o-hide-accessible" type="checkbox" name="coutry" id="belgium">
+                <input class="c-country__input js-country-input o-hide-accessible" type="checkbox" name="country" id="belgium">
                 <label class="c-country__label" for="belgium">
                     <div class="c-country__flag-holder">
-                        <img class="c-country-flag" src="https://restcountries.eu/data/bel.svg" alt="The flag of Belgium.">
+                        <img class="c-country__flag" src="https://restcountries.eu/data/bel.svg" alt="The flag of belgium.">
                     </div>
-                    <div class="c-country__details"> 
+                    <div class="c-country__details">   
                         <h2 class="c-country__name">Belgium</h2>
                         <span class="c-country__native-name">België</span>
                     </div>
                 </label>
             </section>
         </article>
-        
     </main>
+
+    <article class="c-coutries js-countries">
+        <div class="c-loader">
+            <p class="c-class_loader">The app is loading...</p>
+        </div>
+    </article>
 
 </body>
 </html>
